@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/nav_sfoglia"
+                android:fontFamily="@font/buenard"
+                android:icon="@drawable/icon_sfoglia"
+                android:textColor="@color/colorText"
+                android:title="Sfoglia" />
+
+            <item
+                android:id="@+id/nav_libri"
+                android:fontFamily="@font/buenard"
+                android:icon="@drawable/icon_libri"
+                android:textColor="@color/colorText"
+                android:title="I Miei Libri" />
+
+            <item
+                android:id="@+id/nav_letture"
+                android:fontFamily="@font/buenard"
+                android:icon="@drawable/icon_letture"
+                android:textColor="@color/colorText"
+                android:title="Le Mie Letture" />
+
+            <item
+                android:id="@+id/nav_esci"
+                android:fontFamily="@font/buenard"
+                android:icon="@drawable/icon_esci"
+                android:textColor="@color/colorText"
+                android:title="Esci" />
+
+    </group>
+
+</menu>

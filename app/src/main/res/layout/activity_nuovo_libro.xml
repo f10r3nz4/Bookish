@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".ui.NuovoLibroActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/intestazione"
+        android:itemBackground="@color/fui_transparent"
+        app:itemTextColor="@color/colorText"
+        app:menu="@menu/main_menu">
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/new_book_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/colorButtonText"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonAggiungi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:fontFamily="@font/buenard"
+            android:text="Aggiungi"
+            android:textColor="@color/colorButtonText"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textGenere" />
+
+        <ImageView
+            android:id="@+id/imageIconUp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="78dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="22dp"
+            app:layout_constraintBottom_toTopOf="@+id/editTitolo"
+            app:layout_constraintEnd_toStartOf="@+id/textCopertina"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textCopertina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/buenard"
+            android:text="Carica una immagine di copertina."
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageIconUp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageIconUp"
+            app:layout_constraintTop_toTopOf="@+id/imageIconUp" />
+
+        <Button
+            android:id="@+id/buttonCopertina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="34dp"
+            android:fontFamily="@font/buenard"
+            android:text="Carica"
+            android:textColor="@color/colorButtonText"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/textCopertina"
+            app:layout_constraintTop_toBottomOf="@+id/textCopertina" />
+
+        <EditText
+            android:id="@+id/editTitolo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="27dp"
+            android:ems="10"
+            android:fontFamily="@font/buenard"
+            android:hint="Titolo"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/editAutore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageIconUp" />
+
+        <EditText
+            android:id="@+id/editAutore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="52dp"
+            android:ems="10"
+            android:fontFamily="@font/buenard"
+            android:hint="Autore"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorText"
+            app:layout_constraintBottom_toTopOf="@+id/textGenere"
+            app:layout_constraintStart_toStartOf="@+id/editTitolo"
+            app:layout_constraintTop_toBottomOf="@+id/editTitolo" />
+
+        <TextView
+            android:id="@+id/textGenere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="173dp"
+            android:fontFamily="@font/buenard"
+            android:text="Genere"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAggiungi"
+            app:layout_constraintEnd_toStartOf="@+id/groupGenere"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAutore" />
+
+        <RadioGroup
+            android:id="@+id/groupGenere"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="72dp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonAggiungi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textGenere"
+            app:layout_constraintTop_toTopOf="@+id/editAutore">
+
+            <RadioButton
+                android:id="@+id/radioGiallo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/buenard"
+                android:text="Giallo"
+                android:textColor="@color/colorText"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="411dp" />
+
+            <RadioButton
+                android:id="@+id/radioClassici"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/buenard"
+                android:text="Classici"
+                android:textColor="@color/colorText"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="443dp" />
+
+            <RadioButton
+                android:id="@+id/radioFantasy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/buenard"
+                android:text="Fantasy"
+                android:textColor="@color/colorText"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="475dp" />
+
+            <RadioButton
+                android:id="@+id/radioHorror"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/buenard"
+                android:text="Horror"
+                android:textColor="@color/colorText"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="507dp" />
+
+            <RadioButton
+                android:id="@+id/radioNarrativa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/buenard"
+                android:text="Narrativa"
+                android:textColor="@color/colorText"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="539dp" />
+
+            <RadioButton
+                android:id="@+id/radioPerRagazzi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/buenard"
+                android:text="Per Ragazzi"
+                android:textColor="@color/colorText"
+                android:textSize="15sp"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="571dp" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

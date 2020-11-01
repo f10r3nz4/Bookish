@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".ui.MainActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:layout_editor_absoluteX="15dp"
+    tools:layout_editor_absoluteY="50dp">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/intestazione"
+        android:itemBackground="@color/fui_transparent"
+        app:itemTextColor="@color/colorText"
+        app:menu="@menu/main_menu">
+    </com.google.android.material.navigation.NavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+    </ScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/btnGiallo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="21dp"
+            android:background="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/textGiallo"
+            app:layout_constraintEnd_toEndOf="@+id/btnFantasy"
+            app:layout_constraintStart_toStartOf="@+id/btnFantasy"
+            app:srcCompat="@drawable/giallo" />
+
+        <TextView
+            android:id="@+id/textGiallo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="21dp"
+            android:fontFamily="@font/buenard"
+            android:text="Giallo"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnFantasy"
+            app:layout_constraintEnd_toEndOf="@+id/btnGiallo" />
+
+        <ImageButton
+            android:id="@+id/btnHorror"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="11dp"
+            android:background="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/textHorror"
+            app:layout_constraintStart_toStartOf="@+id/btnPerRagazzi"
+            app:srcCompat="@drawable/horror" />
+
+        <TextView
+            android:id="@+id/textHorror"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="13dp"
+            android:fontFamily="@font/buenard"
+            android:text="Horror"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnPerRagazzi"
+            app:layout_constraintEnd_toEndOf="@+id/btnHorror" />
+
+        <ImageButton
+            android:id="@+id/btnFantasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:background="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/textFantasy"
+            app:layout_constraintStart_toStartOf="@+id/btnNarrativa"
+            app:srcCompat="@drawable/fantasy" />
+
+        <TextView
+            android:id="@+id/textFantasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="13dp"
+            android:fontFamily="@font/buenard"
+            android:text="Fantasy"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnNarrativa"
+            app:layout_constraintEnd_toEndOf="@+id/btnFantasy" />
+
+        <ImageButton
+            android:id="@+id/btnClassici"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="57dp"
+            android:layout_marginBottom="21dp"
+            android:background="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/textClassici"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/classici" />
+
+        <TextView
+            android:id="@+id/textClassici"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="21dp"
+            android:fontFamily="@font/buenard"
+            android:text="Classici"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnHorror"
+            app:layout_constraintEnd_toEndOf="@+id/btnClassici" />
+
+        <ImageButton
+            android:id="@+id/btnNarrativa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="21dp"
+            android:background="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/textNarrativa"
+            app:layout_constraintEnd_toEndOf="@+id/textNarrativa"
+            app:srcCompat="@drawable/narrativa" />
+
+        <TextView
+            android:id="@+id/textNarrativa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginEnd="76dp"
+            android:layout_marginBottom="22dp"
+            android:fontFamily="@font/buenard"
+            android:text="Narrativa"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageAggiungi"
+            app:layout_constraintStart_toStartOf="@+id/imageCerca2" />
+
+        <ImageButton
+            android:id="@+id/btnPerRagazzi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginBottom="21dp"
+            android:background="@color/colorBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/textPerRagazzi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textNarrativa"
+            app:srcCompat="@drawable/per_ragazzi" />
+
+        <TextView
+            android:id="@+id/textPerRagazzi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="22dp"
+            android:fontFamily="@font/buenard"
+            android:text="Per Ragazzi"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnPerRagazzi" />
+
+        <TextView
+            android:id="@+id/textAggiungi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="28dp"
+            android:background="#3CFF8BA7"
+            android:fontFamily="@font/buenard"
+            android:text="Aggiungi Libro"
+            android:textColor="#33272a"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageCerca2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textCercaAut" />
+
+        <ImageView
+            android:id="@+id/imageCerca1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="77dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ricerca_libri" />
+
+        <TextView
+            android:id="@+id/textCercaAut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:background="#3CFF8BA7"
+            android:fontFamily="@font/buenard"
+            android:text="Cerca per Autore"
+            android:textColor="#33272a"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/imageCerca1"
+            app:layout_constraintTop_toTopOf="@+id/imageCerca1" />
+
+        <TextView
+            android:id="@+id/textCercaTit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:background="#3CFF8BA7"
+            android:fontFamily="@font/buenard"
+            android:text="Cerca per Titolo"
+            android:textColor="#33272a"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/imageCerca2"
+            app:layout_constraintTop_toTopOf="@+id/imageCerca2" />
+
+        <ImageView
+            android:id="@+id/imageAggiungi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintEnd_toStartOf="@+id/textAggiungi"
+            app:layout_constraintTop_toTopOf="@+id/textAggiungi"
+            app:srcCompat="@drawable/icon_aggiungi" />
+
+        <ImageView
+            android:id="@+id/imageCerca2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageCerca1"
+            app:srcCompat="@drawable/ricerca_libri" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
